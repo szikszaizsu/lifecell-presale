@@ -1,0 +1,310 @@
+<!doctype html><html><head><meta charset=utf8><meta name="robots" content="noindex, nofollow"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>LifeCell Happy Holiday Banner</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Google+Sans+Flex:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Archivo+Black&family=Anton&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: short intro, style + phase switcher, laptop mockup then phone mockup side by side (stacked on phones), then every style at actual size */
+:root {
+  color-scheme: light;
+  --page: #E6E4DE;
+  --ink: #1F1D1A;
+  --muted: #625F58;
+  --site: #F3F1F1;
+  --slate: #555F67;
+  --frame: #1A1918;
+  --chip: #FFFFFF;
+  --pine: #0B2A21;
+  --gold-t: #F1DDA9;
+  --gold: linear-gradient(90deg, #B8925A, #F3DFAE 45%, #C9A46A 70%, #8E6B3A);
+  --serif: "Instrument Serif", "Times New Roman", Georgia, serif;
+  --sans: "Google Sans Flex", "DM Sans", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { background: var(--page); color: var(--ink); font-family: var(--sans); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 40px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px; }
+.eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(38px, 6vw, 60px); line-height: 1; margin: 6px 0 0; text-wrap: balance; }
+h1 em { font-style: italic; }
+.lede { margin: 12px 0 0; color: var(--muted); max-width: 62ch; line-height: 1.55; font-size: 15px; }
+.switch { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.switch span { font-size: 13px; color: var(--muted); margin-right: 4px; }
+.chip { font: inherit; font-size: 13px; padding: 7px 14px; border-radius: 999px; border: 1px solid #CFCBC3; background: var(--chip); color: var(--ink); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--pine); color: var(--gold-t); border-color: var(--pine); }
+.chip:focus-visible, .copy:focus-visible { outline: 2px solid var(--slate); outline-offset: 2px; }
+.copy { font: inherit; font-size: 13px; font-weight: 700; padding: 7px 16px; border-radius: 999px; border: 0; background: #C8102E; color: #fff; cursor: pointer; }
+.copy-msg { font-size: 13px; color: var(--muted); }
+.devices { display: grid; grid-template-columns: minmax(0, 3.4fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+.device-label { font-size: 12px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-top: 10px; text-align: center; }
+
+/* laptop */
+.laptop__screen { background: var(--frame); border-radius: 14px 14px 0 0; padding: 10px 10px 0; }
+.browser { background: #fff; border-radius: 6px 6px 0 0; overflow: hidden; }
+.browser__bar { height: 30px; background: #ECEAE8; display: flex; align-items: center; gap: 6px; padding: 0 12px; }
+.browser__bar i { width: 9px; height: 9px; border-radius: 50%; background: #CFCAC5; display: block; }
+.browser__url { margin-left: 14px; flex: 1; max-width: 340px; height: 18px; border-radius: 9px; background: #fff; font-size: 10.5px; color: #7A746E; display: flex; align-items: center; padding-left: 10px; }
+.laptop__base { height: 14px; background: linear-gradient(#C9C5C1, #A9A49F); border-radius: 0 0 14px 14px; margin: 0 -3%; }
+.fit { position: relative; overflow: hidden; }
+.fit > .stage { position: absolute; top: 0; left: 0; transform-origin: 0 0; }
+
+/* phone */
+.phone { background: var(--frame); border-radius: 38px; padding: 10px; max-width: 300px; margin: 0 auto; width: 100%; }
+.phone__screen { border-radius: 29px; overflow: hidden; background: var(--site); }
+
+/* ---------- site recreation (true pixels) ---------- */
+.site { background: var(--site); color: var(--ink); font-family: var(--sans); position: relative; overflow: hidden; }
+.site--d { width: 1280px; height: 740px; }
+.site--m { width: 375px; height: 780px; }
+.nav { position: absolute; left: 14px; right: 14px; top: 14px; height: 64px; border-radius: 16px; background: rgba(250, 249, 248, .86); box-shadow: 0 1px 3px rgba(0,0,0,.14), 0 8px 24px -12px rgba(0,0,0,.18); display: flex; align-items: center; padding: 0 26px; z-index: 3; }
+.nav__links { display: flex; gap: 38px; font-size: 15px; }
+.nav__logo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 32px; }
+.nav__cart { margin-left: auto; width: 24px; height: 24px; }
+.site--m .nav { top: 58px; left: 12px; right: 12px; height: 60px; padding: 0 18px; }
+.site--m .nav__logo { height: 26px; }
+.burger { width: 20px; height: 14px; display: grid; gap: 4px; }
+.burger i { display: block; height: 2px; background: var(--ink); border-radius: 1px; }
+.bf-slot--d { position: absolute; top: 78px; left: 64px; z-index: 2; width: 380px; border-radius: 0 0 20px 20px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,.28), 0 6px 14px -6px rgba(0,0,0,.3); }
+.bf-slot--m { position: absolute; top: 0; left: 0; right: 0; z-index: 4; }
+.hero-d__text { position: absolute; left: 32px; top: 240px; width: 470px; z-index: 1; }
+.hero-d__title { font-family: var(--serif); font-size: 104px; line-height: .92; letter-spacing: -.01em; }
+.hero-d__title em { display: block; }
+.hero-d__p { font-size: 19px; line-height: 1.5; color: #4A4540; margin: 30px 0 0; max-width: 440px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; background: var(--slate); color: #fff; border-radius: 14px; font-size: 18px; height: 58px; padding: 0 30px; margin-top: 34px; box-shadow: 0 8px 18px -8px rgba(40,50,60,.6); }
+.hero-d__img { position: absolute; left: 504px; right: 16px; top: 0; bottom: 34px; border-radius: 0 0 26px 26px; overflow: hidden; background: #CFC6BC; }
+.hero-d__img img, .hero-m__img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.hero-m { position: absolute; top: 150px; left: 0; right: 0; text-align: center; padding: 0 20px; }
+.hero-m__title { font-family: var(--serif); font-size: 62px; line-height: .95; }
+.hero-m__title em { display: block; }
+.hero-m__p { font-size: 15px; line-height: 1.5; color: #4A4540; margin: 18px 0 0; }
+.hero-m .btn { font-size: 15px; height: 50px; padding: 0 26px; margin-top: 22px; border-radius: 12px; }
+.hero-m__img { margin: 28px 0 0; height: 300px; border-radius: 22px; overflow: hidden; background: #CFC6BC; }
+
+.strip { display: grid; gap: 12px; }
+.strip__row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 14px; }
+.strip__row .bf-slot { width: 380px; max-width: 100%; border-radius: 0 0 20px 20px; overflow: hidden; }
+.back { color: var(--ink); font-weight: 700; text-decoration: none; }
+.back:hover { text-decoration: underline; }
+.note { font-size: 13px; color: var(--muted); line-height: 1.5; max-width: 70ch; }
+@media (max-width: 820px) { .devices { grid-template-columns: minmax(0, 1fr); } }
+</style>
+
+<style id="hh-css">
+/* ===== LifeCell Happy Holiday banner · 44px high · add class "m" for the mobile full-width bar ===== */
+.hh { --hh-gold: linear-gradient(90deg, #B8925A, #F3DFAE 45%, #C9A46A 70%, #8E6B3A); position: relative; isolation: isolate; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; height: 44px; padding: 0 14px; overflow: hidden; white-space: nowrap; text-decoration: none; font-family: "Google Sans Flex", "DM Sans", system-ui, sans-serif; }
+.hh > * { position: relative; z-index: 1; }
+.hh .hh-deco { position: absolute; z-index: 0; pointer-events: none; }
+.hh-serif { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 27px; line-height: 30px; }
+.hh-dm { font-family: "DM Serif Display", Georgia, serif; }
+.hh-arch { font-family: "Archivo Black", "Arial Black", sans-serif; }
+.hh-anton { font-family: Anton, Impact, sans-serif; }
+.hh-mono { font-family: "Space Mono", ui-monospace, monospace; }
+.hh-s { font-size: 10px; font-weight: 700; }
+.hh-stack { display: flex; flex-direction: column; gap: 1px; text-align: left; }
+.hh-p { font-weight: 700; font-size: 10px; letter-spacing: .14em; line-height: 12px; }
+.hh-d { font-weight: 500; font-size: 10.5px; line-height: 12px; }
+.hh-pill { font-weight: 700; font-size: 10px; letter-spacing: .1em; line-height: 12px; padding: 4px 10px; border-radius: 20px; }
+.hh-line { font-family: "DM Serif Display", Georgia, serif; font-size: 15px; }
+.hh-arrow { display: inline-grid; place-items: center; width: 17px; height: 17px; border: 1.2px solid currentColor; border-radius: 50%; font-size: 10px; font-weight: 700; line-height: 1; }
+.hh-shop { font-weight: 700; font-size: 12px; text-decoration: underline; text-underline-offset: 2px; }
+
+/* 1 · Gold Foil */
+.hh--foil { background: linear-gradient(90deg, #B8925A, #E9D29E 35%, #F6E7C1 55%, #CDA96C 78%, #A07A43); color: #1B140C; }
+.hh--foil .hh-frame { top: 0; bottom: 4px; left: 8px; right: 8px; border: .75px solid rgba(27,20,12,.35); border-top: 0; border-radius: 0 0 15px 15px; }
+.hh--foil.m .hh-frame { top: 4px; border-top: .75px solid rgba(27,20,12,.35); border-radius: 2px; }
+.hh--foil .hh-d { color: rgba(27,20,12,.72); }
+
+/* 2 · Evergreen Luxe */
+.hh--luxe { background: #0B2A21; }
+.hh--luxe .hh-rule { left: 12px; right: 12px; top: 4px; height: 1px; background: var(--hh-gold); opacity: .7; }
+.hh--luxe .hh-rule + .hh-rule { display: none; top: auto; bottom: 4px; }
+.hh--luxe.m .hh-rule + .hh-rule { display: block; }
+.hh--luxe .hh-serif, .hh--luxe .hh-s { background: var(--hh-gold); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hh--luxe .hh-p { color: #F1DDA9; }
+.hh--luxe .hh-d { color: rgba(251,247,239,.65); }
+
+/* 3–5 · Site Native */
+.hh--green { background: #0F3B2E; color: #FBF7EF; }
+.hh--green .hh-shop { color: #E9C77B; }
+.hh--snow { background: #FBF7EF; color: #0F3B2E; }
+.hh--snow .hh-shop { color: #C8102E; }
+.hh--cran { background: #8E1B2B; color: #fff; }
+.hh--cran .hh-shop { color: #F1DDA9; }
+
+/* 6 · Candy Ticker */
+.hh--ticker { background: #C8102E; color: #fff; }
+.hh--ticker .hh-tape { left: 0; right: 0; height: 7px; background: #0B2A21; color: #fff; font-size: 5.5px; font-weight: 700; letter-spacing: .08em; line-height: 7px; overflow: hidden; }
+.hh--ticker .hh-tape:first-child { top: 0; text-indent: -6px; }
+.hh--ticker .hh-tape + .hh-tape { bottom: 0; text-indent: -40px; }
+.hh--ticker .hh-t { font-size: 17px; }
+.hh--ticker .hh-pill { background: #fff; color: #C8102E; font-family: "Archivo Black", sans-serif; font-weight: 400; }
+.hh--ticker .hh-go { font-size: 18px; font-weight: 700; }
+
+/* 7 · Mega Type */
+.hh--mega { background: #0F3B2E; color: #fff; gap: 12px; }
+.hh--mega .hh-t { font-size: 26px; line-height: 30px; }
+.hh--mega .hh-p { color: #E9C77B; }
+.hh--mega .hh-d { color: rgba(255,255,255,.7); }
+
+/* 8 · Ornament Sticker */
+.hh--sticker { background: #0B2A21; color: #fff; padding-left: 60px; }
+.hh--sticker .hh-star { left: -6px; top: -11px; width: 66px; height: 66px; }
+.hh--sticker .hh-xmas { left: 9px; top: 14px; font-size: 13px; color: #fff; transform: rotate(12deg); }
+.hh--sticker .hh-t { font-size: 24px; line-height: 30px; }
+.hh--sticker .hh-p { color: #E9C77B; }
+.hh--sticker .hh-d { color: rgba(255,255,255,.7); }
+
+/* 9 · Gift Receipt */
+.hh--receipt { background: #FBF7EF; }
+.hh--receipt .hh-t { font-weight: 700; font-size: 14px; color: #0F3B2E; letter-spacing: .02em; }
+.hh--receipt .hh-dots { font-size: 13px; color: #9A948A; }
+.hh--receipt .hh-ph { font-weight: 700; font-size: 11px; color: #C8102E; }
+
+/* 10 · Outline Echo */
+.hh--echo { background: #C8102E; color: #fff; }
+.hh--echo .hh-echo { left: -110px; top: -9px; font-family: "Archivo Black", sans-serif; font-size: 58px; line-height: 62px; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.22); }
+.hh--echo .hh-t { font-size: 19px; }
+.hh--echo .hh-pill { background: #0B2A21; color: #fff; }
+
+/* 11 · Snowfall */
+.hh--snowfall { background: linear-gradient(180deg, #0B2A21, #155540); color: #fff; }
+.hh--snowfall .hh-snow { inset: 0; }
+.hh--snowfall .hh-t { font-size: 20px; }
+.hh--snowfall .hh-s { color: #E9C77B; }
+.hh--snowfall .hh-pill { background: #C8102E; color: #fff; }
+</style>
+
+<div class="wrap">
+  <header>
+    <a class="eyebrow back" href="../index.html" title="All LifeCell pages">← LifeCell</a> <span class="eyebrow">· lifecellskin.com · Christmas 2026</span>
+    <h1>Christmas <em>Happy Holiday</em> banners</h1>
+    <p class="lede">This is how the Christmas banner looks on the site. On desktop it sits in the tab below the header; on mobile it runs full width at the top of the page. There are 11 styles and four campaign phases, the same set as the Figma file. Use the buttons to switch them, then copy the code of the chosen banner.</p>
+  </header>
+
+  <div style="display:grid;gap:10px">
+    <div class="switch" id="variant"><span>Style:</span></div>
+    <div class="switch" id="switch"><span>Phase:</span></div>
+    <div class="switch"><button type="button" class="copy" id="copy">Copy banner code</button><span class="copy-msg" id="copy-msg" aria-live="polite"></span></div>
+  </div>
+
+  <div class="devices">
+    <figure style="margin:0">
+      <div class="laptop__screen">
+        <div class="browser">
+          <div class="browser__bar"><i></i><i></i><i></i><div class="browser__url">lifecellskin.com</div></div>
+          <div class="fit" data-w="1280" data-h="740">
+            <div class="stage">
+              <div class="site site--d">
+                <div class="nav">
+                  <div class="nav__links"><span>Shop ⌄</span><span>What's New</span><span>Science</span><span>Company ⌄</span></div>
+                  <img class="nav__logo" src="lifecell-logo.png" alt="LifeCell">
+                  <svg class="nav__cart" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>
+                </div>
+                <div class="bf-slot bf-slot--d" data-fmt="d"></div>
+                <div class="hero-d__img"><img src="hero.webp" alt=""></div>
+                <div class="hero-d__text">
+                  <div class="hero-d__title">Redefine<em>Your Skin</em></div>
+                  <p class="hero-d__p">Dermatologist-tested anti-aging science that works - morning and night, for every skin type.</p>
+                  <span class="btn">Discover LifeCell</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="laptop__base"></div>
+      <figcaption class="device-label">Desktop · 1280 px wide</figcaption>
+    </figure>
+
+    <figure style="margin:0">
+      <div class="phone">
+        <div class="phone__screen">
+          <div class="fit" data-w="375" data-h="780">
+            <div class="stage">
+              <div class="site site--m">
+                <div class="bf-slot bf-slot--m" data-fmt="m"></div>
+                <div class="nav">
+                  <div class="burger"><i></i><i></i><i></i></div>
+                  <img class="nav__logo" src="lifecell-logo.png" alt="LifeCell">
+                  <svg class="nav__cart" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>
+                </div>
+                <div class="hero-m">
+                  <div class="hero-m__title">Redefine<em>Your Skin</em></div>
+                  <p class="hero-m__p">Dermatologist-tested anti-aging science that works - morning and night, for every skin type.</p>
+                  <span class="btn">Discover LifeCell</span>
+                  <div class="hero-m__img"><img src="hero.webp" alt=""></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="device-label">Mobile · 375 px</figcaption>
+    </figure>
+  </div>
+
+  <section class="strip" id="strips"></section>
+
+  <p class="note">The mockup is a rebuilt version of the top of the site, using the original logo and photo. The banners use plain HTML and CSS, so the copied code looks the same on the live site. The copied code holds the shared CSS and the markup for desktop; add the class <code>m</code> for the mobile bar.</p>
+</div>
+
+<script>
+const PHASES = [
+  { id: 'early', name: 'Early Access', p: 'EARLY ACCESS', d: 'Discount at checkout', l: 'Happy Holiday Early Access' },
+  { id: 'gift', name: 'Gift Season', p: 'GIFT SEASON', d: 'Discount at checkout', l: 'Happy Holiday Gift Season' },
+  { id: 'extended', name: 'Extended', p: 'EXTENDED', d: 'Discount at checkout', l: 'Happy Holiday Extended' },
+  { id: 'last', name: 'Last Chance', p: 'LAST CHANCE', d: 'Discount applied', l: 'Happy Holiday · Last Chance' },
+];
+const STAR = (() => { const p = []; for (let i = 0; i < 28; i++) { const r = i % 2 ? 26.4 : 33, a = Math.PI * i / 14 - Math.PI / 2; p.push((33 + r * Math.cos(a)).toFixed(1) + ',' + (33 + r * Math.sin(a)).toFixed(1)); } return p.join(' '); })();
+const BARCODE = (() => { let x = 0, r = ''; for (const w of [2,1,3,1,1,2,1,3,2,1,1,2,3,1,2]) { r += `<rect x="${x.toFixed(1)}" width="${w}" height="22"/>`; x += w + 2.4; } return `<svg width="${Math.ceil(x)}" height="22" viewBox="0 0 ${Math.ceil(x)} 22" fill="#1B140C" aria-hidden="true">${r}</svg>`; })();
+const SNOW = (() => { let s = 7; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647; const g = [];
+  while (g.length < 34) { const x = rnd() * 100, y = rnd() * 44; if (x > 17 && x < 83 && y > 6 && y < 38) continue; const r = (0.7 + rnd() * 1.3).toFixed(1), a = (0.35 + rnd() * 0.55).toFixed(2); g.push(`radial-gradient(circle at ${x.toFixed(1)}% ${y.toFixed(1)}px, rgba(255,255,255,${a}) 0 ${r}px, transparent ${(+r + .6).toFixed(1)}px)`); }
+  return g.join(','); })();
+const stack = ph => `<span class="hh-stack"><span class="hh-p">${ph.p}</span><span class="hh-d">${ph.d}</span></span>`;
+const native = ph => `<span class="hh-line">${ph.l}</span><span class="hh-arrow">→</span><span class="hh-shop">Shop Now</span>`;
+const tape = 'HAPPY HOLIDAY ✦ DISCOUNT AT CHECKOUT ✦ '.repeat(6);
+const STYLES = [
+  { id: 'foil', name: 'Gold Foil', h: ph => `<span class="hh-deco hh-frame"></span><span class="hh-serif">Happy Holiday</span><span class="hh-s">✦</span>${stack(ph)}` },
+  { id: 'luxe', name: 'Evergreen Luxe', h: ph => `<span class="hh-deco hh-rule"></span><span class="hh-deco hh-rule"></span><span class="hh-serif">Happy Holiday</span><span class="hh-s">✦</span>${stack(ph)}` },
+  { id: 'green', name: 'Site Native Green', h: native },
+  { id: 'snow', name: 'Site Native Snow', h: native },
+  { id: 'cran', name: 'Site Native Cranberry', h: native },
+  { id: 'ticker', name: 'Candy Ticker', h: ph => `<span class="hh-deco hh-tape">${tape}</span><span class="hh-deco hh-tape">${tape}</span><span class="hh-arch hh-t">HAPPY HOLIDAY</span><span class="hh-pill">${ph.p}</span><span class="hh-go">→</span>` },
+  { id: 'mega', name: 'Mega Type', h: ph => `<span class="hh-arch hh-t">happy holiday</span>${stack(ph)}` },
+  { id: 'sticker', name: 'Ornament Sticker', h: ph => `<svg class="hh-deco hh-star" viewBox="0 0 66 66" aria-hidden="true"><polygon points="${STAR}" fill="#C8102E"/></svg><span class="hh-deco hh-arch hh-xmas">XMAS</span><span class="hh-anton hh-t">HAPPY HOLIDAY</span>${stack(ph)}` },
+  { id: 'receipt', name: 'Gift Receipt', h: ph => `<span class="hh-mono hh-t">HAPPY HOLIDAY</span><span class="hh-mono hh-dots">......</span><span class="hh-mono hh-ph">${ph.p}</span>${BARCODE}` },
+  { id: 'echo', name: 'Outline Echo', h: ph => `<span class="hh-deco hh-echo">HAPPY HOLIDAY HAPPY HOLIDAY HAPPY HOLIDAY</span><span class="hh-arch hh-t">HAPPY HOLIDAY</span><span class="hh-pill">${ph.p}</span>` },
+  { id: 'snowfall', name: 'Snowfall', h: ph => `<span class="hh-deco hh-snow" style="background-image:${SNOW}"></span><span class="hh-dm hh-t">Happy Holiday</span><span class="hh-s">✦</span><span class="hh-pill">${ph.p}</span>` },
+];
+const banner = (st, ph, m) => `<a class="hh hh--${st.id}${m ? ' m' : ''}" href="#" tabindex="-1" aria-label="Happy Holiday ${ph.name}">${st.h(ph)}</a>`;
+const fromHash = () => (STYLES.find(s => '#' + s.id === location.hash) || STYLES[0]).id;
+let variant = fromHash(), cur = 'early';
+addEventListener('hashchange', () => { variant = fromHash(); render(); });
+const vs = document.getElementById('variant'), sw = document.getElementById('switch');
+STYLES.forEach(s => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.id = 'variant-' + s.id; b.textContent = s.name; b.addEventListener('click', () => { variant = s.id; render(); }); vs.appendChild(b); });
+PHASES.forEach(ph => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.id = 'phase-' + ph.id; b.textContent = ph.name; b.addEventListener('click', () => { cur = ph.id; render(); }); sw.appendChild(b); });
+function render() {
+  const ph = PHASES.find(p => p.id === cur), st = STYLES.find(s => s.id === variant);
+  document.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c.id === 'phase-' + cur || c.id === 'variant-' + variant));
+  document.querySelectorAll('.devices .bf-slot').forEach(s => s.innerHTML = banner(st, ph, s.dataset.fmt === 'm'));
+  document.getElementById('copy-msg').textContent = '';
+}
+document.getElementById('strips').innerHTML = STYLES.map((st, i) => `<div class="eyebrow">${i + 1} · ${st.name} · all four phases, actual size (380 × 44)</div><div class="strip__row">${PHASES.map(ph => `<div class="bf-slot">${banner(st, ph, false)}</div>`).join('')}</div>`).join('');
+document.addEventListener('click', e => { if (e.target.closest('.hh')) e.preventDefault(); });
+document.getElementById('copy').addEventListener('click', () => {
+  const st = STYLES.find(s => s.id === variant), ph = PHASES.find(p => p.id === cur);
+  const fonts = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Google+Sans+Flex:wght@400;500;700&family=DM+Serif+Display&family=Archivo+Black&family=Anton&family=Space+Mono:wght@400;700&display=swap">';
+  const code = `${fonts}\n<style>${document.getElementById('hh-css').textContent}</style>\n${banner(st, ph, false).replace(' tabindex="-1"', '')}`;
+  const msg = document.getElementById('copy-msg');
+  const fallback = () => { const t = document.createElement('textarea'); t.value = code; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); msg.textContent = 'Copied.'; } catch (e) { msg.textContent = 'Copy failed. Select the code by hand.'; } t.remove(); };
+  if (navigator.clipboard) navigator.clipboard.writeText(code).then(() => msg.textContent = `Copied: ${st.name} · ${ph.name}`, fallback); else fallback();
+});
+function fit() {
+  document.querySelectorAll('.fit').forEach(f => { const w = +f.dataset.w, h = +f.dataset.h, s = f.clientWidth / w; f.style.height = (h * s) + 'px'; f.firstElementChild.style.transform = `scale(${s})`; });
+}
+render(); fit();
+addEventListener('resize', fit);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+</script>
+</body></html>
