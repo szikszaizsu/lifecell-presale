@@ -117,10 +117,14 @@ h1 em { font-style: italic; }
 
 /* Red Gold: Gold Foil layout on Christmas red, gold lettering and a gold inner frame */
 .hh--red { background: linear-gradient(90deg, #8E0C1F, #C8102E 50%, #8E0C1F); }
-.hh--red .hh-frame { top: 0; bottom: 4px; left: 8px; right: 8px; border: .75px solid rgba(233,199,123,.6); border-top: 0; border-radius: 0 0 15px 15px; }
-.hh--red.m .hh-frame { top: 4px; border-top: .75px solid rgba(233,199,123,.6); border-radius: 2px; }
+.hh--red .hh-trim { left: 0; right: 0; bottom: 0; height: 3px; background: #0F3B2E; }
+.hh--red .hh-trim + .hh-trim { display: none; top: 0; bottom: auto; }
+.hh--red.m .hh-trim + .hh-trim { display: block; }
+.hh--red .hh-frame { top: 0; bottom: 6px; left: 8px; right: 8px; border: .75px solid rgba(233,199,123,.6); border-top: 0; border-radius: 0 0 15px 15px; }
+.hh--red.m .hh-frame { top: 6px; border-top: .75px solid rgba(233,199,123,.6); border-radius: 2px; }
 .hh--red .hh-serif, .hh--red .hh-s { background: var(--hh-gold); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.hh--red .hh-p { color: #F1DDA9; }
+.hh--red .hh-stack { gap: 2px; }
+.hh--red .hh-p { align-self: flex-start; background: #0F3B2E; color: #F1DDA9; padding: 1px 6px; border-radius: 3px; }
 .hh--red .hh-d { color: rgba(241,221,169,.8); }
 
 /* 2 · Evergreen Luxe */
@@ -186,8 +190,8 @@ h1 em { font-style: italic; }
 <div class="wrap">
   <header>
     <a class="eyebrow back" href="../index.html" title="All LifeCell pages">← LifeCell</a> <span class="eyebrow">· lifecellskin.com · Christmas 2026</span>
-    <h1>Red Gold <em>Happy Holiday</em> banner</h1>
-    <p class="lede">This is how the Christmas banner looks on the site: gold lettering on Christmas red with a thin gold inner frame. On desktop it sits in the tab below the header; on mobile it runs full width at the top of the page. Use the buttons to switch the four campaign phases, then copy the code.</p>
+    <h1>Christmas <em>Happy Holiday</em> banner</h1>
+    <p class="lede">This is how the Christmas banner looks on the site: gold lettering on Christmas red, a thin gold inner frame, a pine-green trim and the phase on a green tag. On desktop it sits in the tab below the header; on mobile it runs full width at the top of the page. Use the buttons to switch the four campaign phases, then copy the code.</p>
   </header>
 
   <div style="display:grid;gap:10px">
@@ -273,7 +277,7 @@ const stack = ph => `<span class="hh-stack"><span class="hh-p">${ph.p}</span><sp
 const native = ph => `<span class="hh-line">${ph.l}</span><span class="hh-arrow">→</span><span class="hh-shop">Shop Now</span>`;
 const tape = 'HAPPY HOLIDAY ✦ DISCOUNT AT CHECKOUT ✦ '.repeat(6);
 const STYLES = [
-  { id: 'red', name: 'Red Gold', h: ph => `<span class="hh-deco hh-frame"></span><span class="hh-serif">Happy Holiday</span><span class="hh-s">✦</span>${stack(ph)}` },
+  { id: 'red', name: 'Red Gold Green', h: ph => `<span class="hh-deco hh-trim"></span><span class="hh-deco hh-trim"></span><span class="hh-deco hh-frame"></span><span class="hh-serif">Happy Holiday</span><span class="hh-s">✦</span>${stack(ph)}` },
 ];
 const OTHER_STYLES = [
   { id: 'foil', name: 'Gold Foil', h: ph => `<span class="hh-deco hh-frame"></span><span class="hh-serif">Happy Holiday</span><span class="hh-s">✦</span>${stack(ph)}` },
