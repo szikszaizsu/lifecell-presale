@@ -182,6 +182,7 @@ section.ba { padding-bottom: 28px; }
 @media (prefers-reduced-motion: reduce) { .cta-footer { transition: none !important; } }
 
 /* B · Ivory Gold extras */
+.hero-media img { aspect-ratio: 10 / 9; }
 .hero h1 em, .script { font-style: italic; letter-spacing: -.01em; }
 .hero h1 em { font-size: calc(var(--h1-size) * 1.02); line-height: 1.05; font-weight: 600; }
 .script { font-size: 34px; }
