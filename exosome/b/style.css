@@ -183,12 +183,6 @@ section.ba { padding-bottom: 28px; }
 
 /* B · Ivory Gold extras */
 /* ---- B layout (different from C): image-first hero, side-by-side why, alternating steps ---- */
-.hero { padding-top: 20px; }
-.hero-media { margin: 0; border-radius: 0; }
-.hero-media img { aspect-ratio: 4 / 3; object-fit: cover; }
-.hero-text { margin-top: 28px; }
-.hero h1 { margin-top: 14px; }
-.hero-bottom { margin-top: 26px; }
 .why .container { display: grid; grid-template-columns: 200px 1fr; column-gap: 22px; }
 .why .container > .eyebrow, .why .container > .section-title, .why .answer { grid-column: 1 / -1; }
 .why-img { width: 200px; height: 290px; aspect-ratio: auto; object-position: 60% 30%; margin-top: 32px; border-radius: 120px 120px 22px 22px; }
