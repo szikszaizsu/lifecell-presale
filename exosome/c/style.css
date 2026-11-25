@@ -133,6 +133,7 @@ section.ba { padding-bottom: 28px; }
 .note { margin-top: 24px; font-weight: 600; color: var(--ink); }
 
 /* ---------- vs ---------- */
+.vs-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 28px; margin-top: 32px; }
 .vs { width: 100%; margin-top: 32px; border-collapse: separate; border-spacing: 0; border: 1.5px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--surface); }
 .vs th, .vs td { padding: 20px 18px; border-top: 1.5px solid var(--line); font-size: 19px; line-height: 26px; text-align: left; }
 .vs thead th, .vs thead td { border-top: 0; font: 700 16px/20px var(--font-b); letter-spacing: .16em; text-transform: uppercase; text-align: center; color: var(--muted); }
