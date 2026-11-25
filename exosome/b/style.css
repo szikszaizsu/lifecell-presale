@@ -182,6 +182,30 @@ section.ba { padding-bottom: 28px; }
 @media (prefers-reduced-motion: reduce) { .cta-footer { transition: none !important; } }
 
 /* B · Ivory Gold extras */
+/* ---- B layout (different from C): image-first hero, side-by-side why, alternating steps ---- */
+.hero { padding-top: 20px; }
+.hero-media { margin: 0; border-radius: 0; }
+.hero-media img { aspect-ratio: 4 / 3; object-fit: cover; }
+.hero-text { margin-top: 28px; }
+.hero h1 { margin-top: 14px; }
+.hero-bottom { margin-top: 26px; }
+.why .container { display: grid; grid-template-columns: 200px 1fr; column-gap: 22px; }
+.why .container > .eyebrow, .why .container > .section-title, .why .answer { grid-column: 1 / -1; }
+.why-img { width: 200px; height: 290px; aspect-ratio: auto; object-position: 60% 30%; margin-top: 32px; border-radius: 120px 120px 22px 22px; }
+.why-list { margin-top: 32px; min-width: 0; gap: 18px; }
+.why-list li { grid-template-columns: 38px 1fr; gap: 8px; }
+.why-list .n { font-size: 28px; }
+.why-list h3 { font-size: 18px; line-height: 24px; }
+.why-list p { font-size: 18px; line-height: 24px; }
+.science { background: var(--bg); }
+.steps { grid-template-columns: 1fr; gap: 28px; }
+.steps li { display: grid; grid-template-columns: 210px 1fr; gap: 24px; align-items: center; }
+.steps li:nth-child(even) { grid-template-columns: 1fr 210px; }
+.steps li:nth-child(even) picture { order: 2; }
+.steps li img { aspect-ratio: 1 / 1; border-radius: 50%; }
+.steps li .num { margin-top: 0; }
+.ingr { padding-top: 40px; }
+
 .hero-media img { aspect-ratio: 10 / 9; }
 .hero h1 em, .script { font-style: italic; letter-spacing: -.01em; }
 .hero h1 em { font-size: calc(var(--h1-size) * 1.02); line-height: 1.05; font-weight: 600; }
