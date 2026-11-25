@@ -5,83 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>LifeCell · Design pages</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
 <style>
-  :root { --bg: #0D0A08; --card: #17120E; --line: rgba(212,178,122,.22); --gold: #D9B77C; --gold-2: #B8914F; --ink: #F3EADB; --muted: #A99C89; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { background: var(--bg); }
-  body { min-height: 100vh; color: var(--ink); font: 400 16px/1.55 'Inter', system-ui, sans-serif;
-    background: radial-gradient(80% 50% at 50% -10%, #3A2A17 0, rgba(58,42,23,0) 70%), var(--bg); }
-  main { max-width: 1040px; margin: 0 auto; padding: 72px 24px 80px; }
-  header { text-align: center; }
-  .logo { width: 180px; height: auto; margin: 0 auto; display: block; }
-  .kicker { margin-top: 36px; font: 600 12px/1 'Inter', sans-serif; letter-spacing: .34em; text-transform: uppercase; color: var(--gold-2); }
-  h1 { margin-top: 18px; text-wrap: balance; font: 500 clamp(34px, 6vw, 62px)/1.08 'Cormorant Garamond', Georgia, serif; letter-spacing: .01em; }
-  h1 em { font-style: italic; color: var(--gold); }
-  .lead { margin: 18px auto 0; max-width: 460px; color: var(--muted); font-size: 16px; }
-  .rule { width: 120px; height: 1px; margin: 40px auto 0; background: linear-gradient(90deg, transparent, var(--gold-2), transparent); }
-  .grid { margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px; }
-  .card { display: block; color: inherit; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 22px; overflow: hidden;
-    transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .35s, box-shadow .35s; }
-  .card:hover { transform: translateY(-4px); border-color: rgba(217,183,124,.55); box-shadow: 0 24px 60px rgba(0,0,0,.45); }
-  .thumb { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #000; }
-  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.22,1,.36,1); }
-  .card:hover .thumb img { transform: scale(1.04); }
-  .thumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,10,8,0) 55%, rgba(13,10,8,.85) 100%); }
-  .tag { position: absolute; left: 18px; top: 16px; z-index: 1; padding: 6px 12px; border-radius: 999px; background: rgba(13,10,8,.6); border: 1px solid var(--line);
-    font: 600 11px/1 'Inter', sans-serif; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); backdrop-filter: blur(6px); }
-  .tag.new { left: auto; right: 18px; background: var(--gold); color: #1A140C; border-color: transparent; }
-  .body { padding: 22px 24px 26px; }
-  .body h2 { font: 500 30px/1.1 'Cormorant Garamond', Georgia, serif; }
-  .body p { margin-top: 8px; color: var(--muted); font-size: 15px; }
-  .meta { margin-top: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .dots { display: flex; gap: 8px; align-items: center; color: var(--muted); font-size: 13px; }
-  .dot { width: 14px; height: 14px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); }
-  .open { font: 600 13px/1 'Inter', sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
-  .open span { display: inline-block; transition: transform .3s; }
-  .card:hover .open span { transform: translateX(4px); }
-  footer { margin-top: 64px; text-align: center; color: #6F6455; font-size: 13px; }
+  :root { --bg:#EEF0F4; --card:#fff; --ink:#111827; --muted:#6B7280; --line:#E5E7EB; --acc:#C99F60; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font:15px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; padding:40px 16px; }
+  main { max-width:640px; margin:0 auto; }
+  h1 { font-size:22px; display:flex; align-items:center; gap:10px; }
+  h1 i { width:14px; height:14px; background:var(--acc); display:inline-block; }
+  p { color:var(--muted); margin-top:6px; }
+  ul { list-style:none; margin-top:24px; display:grid; gap:12px; }
+  a { display:flex; justify-content:space-between; align-items:center; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; color:inherit; text-decoration:none; font-weight:600; }
+  a:hover { border-color:var(--acc); }
+  a small { color:var(--muted); font-weight:500; }
 </style>
 </head>
 <body>
 <main>
-  <header>
-    <img class="logo" src="exosome/assets/logo.png" alt="LifeCell" width="1227" height="299">
-    <p class="kicker">Design studio</p>
-    <h1>Pre-sale pages <em>&amp; banners</em></h1>
-    <p class="lead">Live previews of the newest LifeCell landing pages and campaign banners. Newest first.</p>
-    <div class="rule"></div>
-  </header>
-
-  <!-- NEWEST FIRST: add every new page at the TOP of this grid -->
-  <section class="grid">
-    <a class="card" href="bf-banner/">
-      <div class="thumb"><span class="tag">Banner</span><span class="tag new">New</span><img src="bf-banner/hero.webp" alt="Black Friday banner preview"></div>
-      <div class="body">
-        <h2>Black Friday banners</h2>
-        <p>Gold Luxe and Gold Foil, four campaign phases.</p>
-        <div class="meta">
-          <span class="dots"><i class="dot" style="background:#0E0D0C"></i><i class="dot" style="background:linear-gradient(90deg,#B8925A,#F6E7C1,#A07A43)"></i>2 styles</span>
-          <span class="open">Open <span>→</span></span>
-        </div>
-      </div>
-    </a>
-
-    <a class="card" href="exosome/">
-      <div class="thumb"><span class="tag">Pre-sale page</span><img src="exosome/assets/c-hero.webp" alt="LifeCell Exosomes Collagen Builder"></div>
-      <div class="body">
-        <h2>Exosomes Collagen Builder</h2>
-        <p>Three luxury versions: Black Gold, Ivory Gold, Bordeaux Gold.</p>
-        <div class="meta">
-          <span class="dots"><i class="dot" style="background:#0A0806"></i><i class="dot" style="background:#F3EADB"></i><i class="dot" style="background:#6E1D2C"></i>A · B · C</span>
-          <span class="open">Open <span>→</span></span>
-        </div>
-      </div>
-    </a>
-  </section>
-
-  <footer>LifeCell South Beach Skincare · internal design previews</footer>
+  <h1><i></i>LifeCell design pages</h1>
+  <p>Design previews: pre-sale pages and banners.</p>
+  <ul>
+    <li><a href="bf-banner/">Black Friday banners <small>Gold Luxe · Gold Foil →</small></a></li>
+    <li><a href="exosome/">Exosomes Collagen Builder <small>A · Black Gold · B · Ivory Gold · C · Bordeaux Gold →</small></a></li>
+  </ul>
 </main>
 </body>
 </html>
