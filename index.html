@@ -6,9 +6,15 @@
 <meta name="robots" content="noindex, nofollow">
 <title>LifeCell · Design pages</title>
 <style>
-  :root { --bg:#EEF0F4; --card:#fff; --ink:#111827; --muted:#6B7280; --line:#E5E7EB; --acc:#C99F60; }
+  :root { --bg:#F7F3EC; --card:#fff; --ink:#111827; --muted:#6B7280; --line:#EAE2D4; --acc:#C99F60; }
   * { box-sizing:border-box; margin:0; padding:0; }
-  body { background:var(--bg); color:var(--ink); font:15px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; padding:40px 16px; }
+  html { background:var(--bg); }
+  body { min-height:100vh; color:var(--ink); font:15px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; padding:40px 16px;
+    background:
+      radial-gradient(60% 40% at 50% 0, rgba(217,183,124,.22) 0, rgba(217,183,124,0) 70%),
+      radial-gradient(40% 30% at 100% 100%, rgba(217,183,124,.12) 0, rgba(217,183,124,0) 70%),
+      linear-gradient(180deg, #FBF8F3 0%, #F4EEE4 100%); }
+  a { box-shadow: 0 6px 20px rgba(120,90,40,.06); }
   main { max-width:640px; margin:0 auto; }
   h1 { font-size:22px; display:flex; align-items:center; gap:10px; }
   h1 img { height:26px; width:auto; display:block; }
