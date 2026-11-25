@@ -10,8 +10,8 @@
 <title>LifeCell Exosomes Collagen Builder · A · Black Gold</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="../assets/hero.webp" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Pinyon+Script&family=Playfair+Display:ital@1&family=Archivo:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="style.css?v=202611251950">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Playfair+Display:ital@1&family=Archivo:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css?v=202611252024">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V5M7 10l5-5 5 5M5 20h14"/></symbol>
@@ -77,7 +77,7 @@
 <!-- FORMULA -->
 <section class="formula card light pad center reveal">
   <p class="kicker">The Formula</p>
-  <h2 class="h2">What makes LifeCell Exosomes Collagen Builder different</h2>
+  <h2 class="h2 long">What makes LifeCell Exosomes Collagen Builder different</h2>
   <div class="rule"></div>
   <p class="lead">Our formula combines plant-derived exosomes with clinically backed EGFs and antioxidants for a complete repair boost every night.</p>
   <div class="items">
@@ -115,7 +115,7 @@
 <!-- SCIENCE -->
 <section class="science card dark pad center reveal">
   <p class="kicker">The Science</p>
-  <h2 class="h2">Why exosomes are becoming the #1 anti-aging breakthrough</h2>
+  <h2 class="h2 long">Why exosomes are becoming the #1 anti-aging breakthrough</h2>
   <div class="rule"></div>
   <div class="pic banner cream-pic"><picture><source srcset="../assets/cream.webp" type="image/webp"><img src="../assets/cream.jpg" alt="Swirl of white serum texture" width="1100" height="1100" loading="lazy"></picture></div>
   <p class="lead" style="margin-top:28px">Dermatology research shows that exosomes and EGFs support:</p>
@@ -206,7 +206,7 @@
 
 <!-- WHY YOU'LL LOVE IT -->
 <section class="love card light pad center reveal">
-  <h2 class="h2">Why you’ll love LifeCell Exosomes Collagen Builder</h2>
+  <h2 class="h2 long">Why you’ll love LifeCell Exosomes Collagen Builder</h2>
   <div class="rule"></div>
   <ul class="ticks">
     <li>Helps restore collagen naturally</li>
@@ -220,7 +220,7 @@
 
 <!-- TRUST -->
 <section class="trust card reveal">
-  <div><div class="ic"><svg><use href="#i-lock"/></svg></div><b>SECURE CHECKOUT</b><small>SSL-encrypted payment</small></div>
+  <div><div class="ic"><svg><use href="#i-shield"/></svg></div><b>VITAMIN E</b><small>Antioxidant shield</small></div>
   <div><div class="ic"><svg><use href="#i-leaf"/></svg></div><b>PLANT-POWERED</b><small>Exosome formula</small></div>
   <div><div class="ic"><svg><use href="#i-moon"/></svg></div><b>GENTLE NIGHTLY USE</b><small>No exfoliation</small></div>
   <div><div class="ic"><svg><use href="#i-chat"/></svg></div><b>CUSTOMER SUPPORT</b><small><a href="tel:18774149426">1 (877) 414-9426</a></small></div>
@@ -230,13 +230,12 @@
 <section class="final reveal" id="order">
   <h2>Repair the skin you have.<br>Rebuild the skin you want.</h2>
   <p>Start your nightly collagen-building routine today.</p>
+  <div class="pic final-pic"><picture><source srcset="../assets/final-product.webp" type="image/webp"><img src="../assets/final-product.jpg" alt="LifeCell Exosomes Collagen Builder serum with golden light" width="1100" height="1100" loading="lazy"></picture></div>
   <a class="btn" href="#order">30% OFF <i></i> ORDER NOW</a>
 </section>
 
 <!-- LEGAL -->
 <footer class="legal card">
-  <img class="badges" src="../assets/badges.jpg" alt="McAfee Secure · SSL encryption" width="1000" height="165" loading="lazy">
-  <hr>
   <p>These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease.</p>
   <p>The information provided on this site is for informational purposes only and is not intended as a substitute for advice from your dermatologist or other health care professional or any information contained on or in any product label or packaging. You should not use the information on this website or the product described for diagnosis or treatment of any health problem or as a substitute for any prescription of any medication or other treatment. You should consult with a health care professional before starting any skin or facial regiment or if you have or suspect you might have a skin problem. This information and product is not recommended for women who are pregnant or children.</p>
   <p>If you are using a screen reader and are having problems using the website please call 1 (877) 414-9426 for assistance.</p>
@@ -254,6 +253,19 @@
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -8% 0px' });
   els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+<script>
+/* keep the last two words of every text together: no single word alone on the last line */
+(function () {
+  var sel = 'h1,h2,h3,p,li,th,td,blockquote,cite,small,figcaption,b,.l1,.l2';
+  document.querySelectorAll(sel).forEach(function (el) {
+    var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n, last = null;
+    while ((n = w.nextNode())) if (/\S/.test(n.nodeValue)) last = n;
+    if (!last) return;
+    var t = last.nodeValue.replace(/\s+$/, ''), i = t.lastIndexOf(' ');
+    if (i > 0 && t.length - i < 22) last.nodeValue = t.slice(0, i) + String.fromCharCode(160) + t.slice(i + 1) + last.nodeValue.slice(t.length);
+  });
 })();
 </script>
 </body>
