@@ -243,3 +243,14 @@ section.ba { padding-bottom: 28px; }
 .pname .brand { color: #6E1D2C; }
 .footer-links a { color: #6E1D2C; }
 .cta-footer img { box-shadow: 0 0 0 1px #C9A465; }
+
+/* ===== fixed type scale (Vincent): 15 · 18 · 21 · 26 · 36 · h2 · h1 ===== */
+.eyebrow, .tiny, .vs thead th, .vs thead td, .pname .brand { font-size: 15px; }
+.reassure, .ba-list p, .steps p, .steps h3, .disclaimer, .footer .disclaimer p, .footer-links, .copyright, .pname .size,
+.fact-list li, .proof, .rv-list .who, .ingr-list .txt p, .why-list p, .vs th, .vs td { font-size: 18px; }
+body, .intro, .lead, .checks li, .answer, .note, .hero .sub, .why-list h3, .cta, .cta-footer .cta { font-size: 21px; }
+.ingr-list b, .ba-list h3, .rv-list blockquote p, .script, .pname .prod, .hero-quote blockquote p { font-size: 26px; }
+.steps .num, .why-list .n { font-size: 36px; }
+.offer .section-title { font-size: var(--h2-size); }
+.hero h1 em { font-size: 1em; }
+.stars { font-size: 21px; }

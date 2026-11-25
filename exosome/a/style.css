@@ -241,3 +241,12 @@ p, li, td, th { text-wrap: pretty; }
 .formula .item p, .feat p, .step p, .pair p, .trust small, .disclaimer, .legal p { font-size: 18px; }
 .lead, .story p, .ticks li, .close, .center-strong { font-size: 21px; }
 .final p { font-size: 15px; }
+
+/* ===== fixed type scale (Vincent): 15 · 18 · 21 · 26 · 34 · 64 ===== */
+.kicker, .row:first-child > div, .final p, .ba .tiny { font-size: 15px; }
+.perk span, .step h3, .pair h3, .trust b, .reviews cite, .quote cite, .trust small, .legal p, .legal p:first-of-type, .legal nav, .legal .copy,
+.formula .item p, .feat p, .step p, .pair p, .disclaimer, .btn, .row > div { font-size: 18px; }
+body, .lead, .story p, .ticks li, .close, .center-strong, .hero .sub, .quote p, .tile b, .light .center-strong { font-size: 21px; }
+.formula .item h3, .feat h3, .h2.long, .reviews blockquote, .script, .story .script { font-size: 26px; }
+.h2, .reviews .h2, .story h2, .step .n, .final h2 { font-size: 34px; }
+.stars { font-size: 26px; } .quote .stars { font-size: 18px; }
