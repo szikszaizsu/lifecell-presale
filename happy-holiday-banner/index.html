@@ -136,6 +136,14 @@ h1 em { font-style: italic; }
 .hh--luxe .hh-p { color: #F1DDA9; }
 .hh--luxe .hh-d { color: rgba(251,247,239,.65); }
 
+/* Evergreen Luxe colourways: red (gold lettering) and gold (pine-green lettering) */
+.hh--luxe.hh--red-v { background: #A3122A; }
+.hh--luxe.hh--gold-v { background: linear-gradient(90deg, #B8925A, #E9D29E 35%, #F6E7C1 55%, #CDA96C 78%, #A07A43); }
+.hh--gold-v .hh-rule { background: #0B2A21; opacity: .45; }
+.hh--gold-v .hh-serif, .hh--gold-v .hh-s { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: #0B2A21; }
+.hh--gold-v .hh-p { color: #0B2A21; }
+.hh--gold-v .hh-d { color: rgba(11,42,33,.75); }
+
 /* 3–5 · Site Native */
 .hh--green { background: #0F3B2E; color: #FBF7EF; }
 .hh--green .hh-shop { color: #E9C77B; }
@@ -191,11 +199,11 @@ h1 em { font-style: italic; }
   <header>
     <a class="eyebrow back" href="../index.html" title="All LifeCell pages">← LifeCell</a> <span class="eyebrow">· lifecellskin.com · Christmas 2026</span>
     <h1>Christmas <em>Happy Holiday</em> banner</h1>
-    <p class="lede">This is how the Christmas banner looks on the site: Evergreen Luxe, gold lettering on deep pine green with thin gold rules. On desktop it sits in the tab below the header; on mobile it runs full width at the top of the page. Use the buttons to switch the four campaign phases, then copy the code.</p>
+    <p class="lede">This is how the Christmas banner looks on the site: the Evergreen Luxe layout in three versions: gold on pine green, gold on Christmas red, and pine green on gold. On desktop it sits in the tab below the header; on mobile it runs full width at the top of the page. Use the buttons to switch the version and the four campaign phases, then copy the code.</p>
   </header>
 
   <div style="display:grid;gap:10px">
-    <div class="switch" id="variant" hidden><span>Style:</span></div>
+    <div class="switch" id="variant"><span>Version:</span></div>
     <div class="switch" id="switch"><span>Phase:</span></div>
     <div class="switch"><button type="button" class="copy" id="copy">Copy banner code</button><span class="copy-msg" id="copy-msg" aria-live="polite"></span></div>
   </div>
@@ -293,13 +301,18 @@ const OTHER_STYLES = [
   { id: 'snowfall', name: 'Snowfall', h: ph => `<span class="hh-deco hh-snow" style="background-image:${SNOW}"></span><span class="hh-dm hh-t">Happy Holiday</span><span class="hh-s">✦</span><span class="hh-pill">${ph.p}</span>` },
 ];
 const LUXE = OTHER_STYLES.find(s => s.id === 'luxe');
-const STYLES = [LUXE, ...RED_LIST, ...OTHER_STYLES.filter(s => s !== LUXE)];
-const banner = (st, ph, m) => `<a class="hh hh--${st.id}${m ? ' m' : ''}" href="#" tabindex="-1" aria-label="Happy Holiday ${ph.name}">${st.h(ph)}</a>`;
+const MAIN = [
+  { ...LUXE, name: 'Green' },
+  { ...LUXE, id: 'luxe-red', cls: 'hh--luxe hh--red-v', name: 'Red' },
+  { ...LUXE, id: 'luxe-gold', cls: 'hh--luxe hh--gold-v', name: 'Gold' },
+];
+const STYLES = [...MAIN, ...RED_LIST, ...OTHER_STYLES.filter(s => s !== LUXE)];
+const banner = (st, ph, m) => `<a class="hh ${st.cls || 'hh--' + st.id}${m ? ' m' : ''}" href="#" tabindex="-1" aria-label="Happy Holiday ${ph.name}">${st.h(ph)}</a>`;
 const fromHash = () => (STYLES.find(s => '#' + s.id === location.hash) || STYLES[0]).id;
 let variant = fromHash(), cur = 'early';
 addEventListener('hashchange', () => { variant = fromHash(); render(); });
 const vs = document.getElementById('variant'), sw = document.getElementById('switch');
-STYLES.forEach(s => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.id = 'variant-' + s.id; b.textContent = s.name; b.addEventListener('click', () => { variant = s.id; render(); }); vs.appendChild(b); });
+MAIN.forEach(s => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.id = 'variant-' + s.id; b.textContent = s.name; b.addEventListener('click', () => { variant = s.id; render(); }); vs.appendChild(b); });
 PHASES.forEach(ph => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.id = 'phase-' + ph.id; b.textContent = ph.name; b.addEventListener('click', () => { cur = ph.id; render(); }); sw.appendChild(b); });
 function render() {
   const ph = PHASES.find(p => p.id === cur), st = STYLES.find(s => s.id === variant);
@@ -307,9 +320,9 @@ function render() {
   document.querySelectorAll('.devices .bf-slot').forEach(s => s.innerHTML = banner(st, ph, s.dataset.fmt === 'm'));
   document.getElementById('copy-msg').textContent = '';
 }
-document.getElementById('strips').innerHTML = `<div class="eyebrow">Desktop · all four phases, actual size (380 × 44)</div><div class="strip__row">${PHASES.map(ph => `<div class="bf-slot">${banner(STYLES[0], ph, false)}</div>`).join('')}</div><div class="eyebrow">Mobile · all four phases, actual size (390 × 44)</div><div class="strip__row">${PHASES.map(ph => `<div class="bf-slot" style="width:390px;border-radius:0">${banner(STYLES[0], ph, true)}</div>`).join('')}</div>`
+document.getElementById('strips').innerHTML = MAIN.map(st => `<div class="eyebrow">${st.name} · desktop · all four phases, actual size (380 × 44)</div><div class="strip__row">${PHASES.map(ph => `<div class="bf-slot">${banner(st, ph, false)}</div>`).join('')}</div><div class="eyebrow">${st.name} · mobile · actual size (390 × 44)</div><div class="strip__row">${PHASES.map(ph => `<div class="bf-slot" style="width:390px;border-radius:0">${banner(st, ph, true)}</div>`).join('')}</div>`).join('')
   + `<h2 class="eyebrow" style="margin:36px 0 0;font-size:14px;color:var(--ink)">Other styles · mockups only</h2>`
-  + STYLES.slice(1).map(st => `<div class="eyebrow">${st.name}</div><div class="strip__row">${PHASES.map(ph => `<div class="bf-slot">${banner(st, ph, false)}</div>`).join('')}</div>`).join('');
+  + STYLES.slice(MAIN.length).map(st => `<div class="eyebrow">${st.name}</div><div class="strip__row">${PHASES.map(ph => `<div class="bf-slot">${banner(st, ph, false)}</div>`).join('')}</div>`).join('');
 document.addEventListener('click', e => { if (e.target.closest('.hh')) e.preventDefault(); });
 document.getElementById('copy').addEventListener('click', () => {
   const st = STYLES.find(s => s.id === variant), ph = PHASES.find(p => p.id === cur);
