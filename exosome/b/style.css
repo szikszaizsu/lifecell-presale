@@ -245,7 +245,7 @@ body { font-size: 20px; }
 
 /* hero: champagne, framed product photo */
 .hero { background: radial-gradient(120% 70% at 50% 0, #FFFBF3 0, #F3E7D2 70%, #EBDCC1 100%); border-color: rgba(176,138,76,.45); }
-.hero .logo { width: 210px; margin-bottom: 36px; }
+.hero .logo { width: 170px; margin-bottom: 38px; }
 .hero .kicker { color: var(--gold-deep); }
 .hero h1 { font-weight: 500; font-size: 82px; line-height: .98; letter-spacing: .03em;
   background: linear-gradient(180deg, #C9A160 0%, #8E6A30 100%); -webkit-background-clip: text; background-clip: text; }
