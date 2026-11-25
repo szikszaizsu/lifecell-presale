@@ -18,6 +18,10 @@
   a { display:flex; justify-content:space-between; align-items:center; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; color:inherit; text-decoration:none; font-weight:600; }
   a:hover { border-color:var(--acc); }
   a small { color:var(--muted); font-weight:500; }
+  a .name { display:flex; align-items:center; gap:14px; }
+  .ico { width:40px; height:40px; border-radius:10px; flex:none; display:grid; place-items:center; overflow:hidden; }
+  .ico img { width:100%; height:100%; object-fit:cover; }
+  .ico.bf { background:linear-gradient(135deg,#0E0D0C 0 55%,#C9A46A 55% 100%); color:#F3DFAE; font:italic 700 13px/1 Georgia, serif; }
 </style>
 </head>
 <body>
@@ -25,8 +29,8 @@
   <h1><img src="exosome/assets/logo-dark.png" alt="LifeCell" width="1227" height="299"><span>· design pages</span></h1>
   <p>Design previews: pre-sale pages and banners.</p>
   <ul>
-    <li><a href="bf-banner/">Black Friday banners <small>Gold Luxe · Gold Foil →</small></a></li>
-    <li><a href="exosome/">Exosomes Collagen Builder <small>A · Black Gold · B · Ivory Gold · C · Bordeaux Gold →</small></a></li>
+    <li><a href="bf-banner/"><span class="name"><span class="ico bf">BF</span>Black Friday banners</span> <small>Gold Luxe · Gold Foil →</small></a></li>
+    <li><a href="exosome/"><span class="name"><span class="ico"><img src="exosome/assets/bottle-thumb.jpg" alt=""></span>Exosomes Collagen Builder</span> <small>A · Black Gold · B · Ivory Gold · C · Bordeaux Gold →</small></a></li>
   </ul>
 </main>
 </body>
