@@ -250,3 +250,4 @@ body, .lead, .story p, .ticks li, .close, .center-strong, .hero .sub, .quote p, 
 .formula .item h3, .feat h3, .h2.long, .reviews blockquote, .script, .story .script { font-size: 26px; }
 .h2, .reviews .h2, .story h2, .step .n, .final h2 { font-size: 34px; }
 .stars { font-size: 26px; } .quote .stars { font-size: 18px; }
+.final h2 { font-size: 26px; line-height: 1.35; }
