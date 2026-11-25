@@ -80,7 +80,7 @@ function render() {
   stage.innerHTML = ''; frames = [];
   show.forEach(d => {
     const col = document.createElement('div'); col.className = 'col';
-    col.innerHTML = `<div class="label">${d.name}<small>${d.desc}</small></div><div class="phone"><iframe src="${d.id}/index.html" title="${d.name}" loading="eager"></iframe></div>`;
+    col.innerHTML = `<div class="label">${d.name}<small>${d.desc}</small></div><div class="phone"><iframe src="${d.id}/index.html?t=${Date.now()}" title="${d.name}" loading="eager"></iframe></div>`;
     stage.appendChild(col); frames.push(col.querySelector('iframe'));
   });
   fit();
