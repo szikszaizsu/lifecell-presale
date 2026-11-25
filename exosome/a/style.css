@@ -224,4 +224,5 @@ p, li, td, th { text-wrap: pretty; }
 .pair h3 { font-size: 25px; letter-spacing: .14em; margin-top: 20px; }
 .pair p { font-size: 20px; margin-top: 8px; color: #CFC5B5; }
 .ba .tiny { font-size: 15px; opacity: .5; margin-top: 18px; }
-.ba.pad { padding-bottom: 34px; }
+.ba.pad { padding-bottom: 22px; }
+.ba .tiny { margin-top: 14px; }

@@ -88,7 +88,7 @@ p, li, td, th { text-wrap: pretty; }
 .ba-list h3 { font: 700 23px/30px var(--font-b); letter-spacing: .14em; color: var(--ink); margin-top: 18px; }
 .ba-list p { color: var(--muted); font-size: 20px; margin-top: 4px; }
 .tiny { color: var(--muted); font-size: 16px; margin-top: 20px; opacity: .5; }
-section.ba { padding-bottom: 36px; }
+section.ba { padding-bottom: 28px; }
 
 /* ---------- why ---------- */
 .why-img { width: 100%; aspect-ratio: 16 / 11; object-fit: cover; object-position: 50% 30%; border-radius: var(--radius); margin-top: 32px; }
