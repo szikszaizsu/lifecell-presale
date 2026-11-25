@@ -62,8 +62,10 @@ p, li, td, th { text-wrap: pretty; }
 .hero h1 { font: var(--h-weight) var(--h1-size)/1.02 var(--font-h); letter-spacing: var(--h-track); color: var(--ink); margin-top: 28px; }
 .hero h1 em { display: block; font: 400 calc(var(--h1-size) * 1.12)/1.05 var(--font-s); letter-spacing: 0; color: var(--gold); }
 .hero .sub { color: var(--muted); font-size: 22px; line-height: 32px; margin: 24px auto 0; max-width: 440px; }
-.hero-cta .cta { margin-top: 36px; }
-.hero-media { position: relative; margin: 48px var(--m) 0; border-radius: var(--radius); overflow: hidden; }
+.hero-cta .cta { margin-top: 28px; }
+.hero-bottom { margin-top: 32px; }
+.hero-bottom .fact-list { border-bottom: 0; padding-bottom: 0; }
+.hero-media { position: relative; margin: 32px var(--m) 0; border-radius: var(--radius); overflow: hidden; }
 .hero-media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
 .badge { position: absolute; display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 14px;
   background: rgba(255,252,246,.94); color: #2A2219; font: 600 18px/22px var(--font-b); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
@@ -75,12 +77,13 @@ p, li, td, th { text-wrap: pretty; }
 
 /* ---------- facts ---------- */
 .hero { padding-bottom: 0; }
-.facts { padding-top: 36px; }
+.facts { padding-top: 48px; border-top: 1px solid var(--line); margin: 0 var(--m); }
+.facts .container { padding: 0; }
 .fact-list { list-style: none; display: flex; justify-content: center; padding: 0 0 32px; border-bottom: 1px solid var(--line); }
 .fact-list li { display: flex; align-items: center; gap: 8px; padding: 0 20px; white-space: nowrap; font: 600 19px/24px var(--font-b); color: var(--ink); }
 .fact-list li + li { border-left: 1px solid var(--line); }
 .fact-list svg { width: 20px; height: 20px; color: var(--gold); }
-.intro { margin-top: 32px; color: var(--muted); font-size: 21px; line-height: 34px; }
+.intro { margin: 0 auto 16px; max-width: 536px; color: var(--muted); font-size: 21px; line-height: 34px; text-wrap: pretty; }
 
 /* ---------- before / after ---------- */
 .ba-list { list-style: none; margin-top: 32px; display: grid; gap: 32px; }
@@ -178,13 +181,39 @@ section.ba { padding-bottom: 28px; }
 @media (prefers-reduced-motion: reduce) { .cta-footer { transition: none !important; } }
 
 /* C · Bordeaux Gold: champagne cream, deep bordeaux, gold. Modern editorial luxury. */
+.lc-page { position: relative; }
+.site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 3; }
+.hero-full { position: relative; min-height: 1080px; padding: 112px 0 40px; display: flex; flex-direction: column; justify-content: space-between;
+  background: linear-gradient(180deg, #2A0910 0, #2A0910 400px, transparent 400px) no-repeat, url(../assets/c-hero.webp) 50% 380px / 100% auto no-repeat, #1A0709; color: #F6E7C8; }
+.hero-full::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(42,9,16,0) 0, rgba(42,9,16,0) 390px, rgba(42,9,16,.95) 400px, rgba(42,9,16,0) 500px, rgba(26,7,9,0) 800px, rgba(26,7,9,.85) 910px, #1A0709 970px); }
+.hero-full > * { position: relative; }
+.hero-full h1 { color: #F6E7C8; }
+.hero-full h1 em { color: #E2C28A; }
+.hero-full .sub, .hero-full .proof { color: rgba(246,231,200,.82); }
+.hero-full .proof b { color: #F6E7C8; }
+.hero-full .fact-list li { background: rgba(255,251,245,.10); border-color: rgba(226,194,138,.45); color: #F6E7C8; }
+.hero-full .fact-list li + li { border-left: 1px solid rgba(226,194,138,.45); }
+.hero-full .fact-list svg { color: #E2C28A; }
+.hero-full .cta { background: linear-gradient(180deg,#E9CD95 0%,#C29A58 100%); color: #3A0C15; border-color: rgba(255,255,255,.3); }
+.hero-full .cta .arrow { background: #4E111D; color: #F3DDAA; }
+.facts { border-top: 0; }
+/* bordeaux sections */
+.alt { --alt-bg: #4E111D; background: radial-gradient(120% 60% at 50% 0, #6A1A29 0, #4E111D 55%, #3D0D17 100%); --ink: #F6E7C8; --muted: rgba(246,231,200,.75); --line: rgba(226,194,138,.30); --surface: rgba(255,255,255,.05); --gold: #E2C28A; color: #F6E7C8; }
+.alt .eyebrow { color: #E2C28A; }
+.alt .section-title .l2 { color: #E2C28A; }
+.alt .cta { background: linear-gradient(180deg,#E9CD95 0%,#C29A58 100%); color: #3A0C15; }
+.alt .cta .arrow { background: #4E111D; color: #F3DDAA; }
+.alt .checks svg, .alt .stars { color: #E2C28A; }
+.alt .ba-list img, .alt .steps img { box-shadow: 0 0 0 1px rgba(226,194,138,.45); }
+.alt .rv-list .who { color: #E2C28A; }
+.offer { background: linear-gradient(180deg, var(--bg), #F2E7D8); }
 .hero h1 em, .script { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -.01em; }
 .hero h1 em { font-size: calc(var(--h1-size) * 1.02); line-height: 1.02; color: var(--gold); }
 .script { font-size: 34px; color: #6E1D2C; }
 .section-title { letter-spacing: -.015em; }
 .section-title .l2 { font-style: italic; color: var(--gold); }
 .eyebrow { letter-spacing: .18em; font-weight: 800; font-size: 15px; color: #6E1D2C; }
-.alt .eyebrow { color: #6E1D2C; }
+.alt .eyebrow { color: #E2C28A; }
 .stars, .proof .stars { color: #B8914F; }
 /* pill CTA, bordeaux with champagne text and a thin gold edge */
 .cta { border-radius: 999px; font-weight: 700; letter-spacing: .06em; font-size: 21px; border: 1px solid rgba(214,180,120,.55); }

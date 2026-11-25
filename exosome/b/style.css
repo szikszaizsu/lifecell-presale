@@ -6,7 +6,7 @@
   --line:rgba(176,138,76,.32);
   --cta-bg:linear-gradient(180deg,#D8B77D 0%,#C29A5A 100%); --cta-ink:#2A1F10; --cta-shadow:0 8px 20px rgba(169,128,63,.22);
   --sticky-bg:rgba(255,252,246,.97);
-  --font-h:'Cormorant Garamond',Georgia,serif; --font-s:'Fraunces',Georgia,serif; --font-q:'Cormorant Garamond',Georgia,serif; --font-b:'Inter',system-ui,sans-serif;
+  --font-h:'Cormorant Garamond',Georgia,serif; --font-s:'Cormorant Garamond',Georgia,serif; --font-q:'Cormorant Garamond',Georgia,serif; --font-b:'Inter',system-ui,sans-serif;
   --h-weight:500; --h1-size:68px; --h2-size:48px; --h-track:.02em;
   --badge-filter:none; --badge-blend:multiply;
   --hero-bg:radial-gradient(120% 60% at 50% 0,#FFFBF3 0,transparent 75%);
@@ -62,8 +62,10 @@ p, li, td, th { text-wrap: pretty; }
 .hero h1 { font: var(--h-weight) var(--h1-size)/1.02 var(--font-h); letter-spacing: var(--h-track); color: var(--ink); margin-top: 28px; }
 .hero h1 em { display: block; font: 400 calc(var(--h1-size) * 1.12)/1.05 var(--font-s); letter-spacing: 0; color: var(--gold); }
 .hero .sub { color: var(--muted); font-size: 22px; line-height: 32px; margin: 24px auto 0; max-width: 440px; }
-.hero-cta .cta { margin-top: 36px; }
-.hero-media { position: relative; margin: 48px var(--m) 0; border-radius: var(--radius); overflow: hidden; }
+.hero-cta .cta { margin-top: 28px; }
+.hero-bottom { margin-top: 32px; }
+.hero-bottom .fact-list { border-bottom: 0; padding-bottom: 0; }
+.hero-media { position: relative; margin: 32px var(--m) 0; border-radius: var(--radius); overflow: hidden; }
 .hero-media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
 .badge { position: absolute; display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 14px;
   background: rgba(255,252,246,.94); color: #2A2219; font: 600 18px/22px var(--font-b); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
@@ -75,12 +77,13 @@ p, li, td, th { text-wrap: pretty; }
 
 /* ---------- facts ---------- */
 .hero { padding-bottom: 0; }
-.facts { padding-top: 36px; }
+.facts { padding-top: 48px; border-top: 1px solid var(--line); margin: 0 var(--m); }
+.facts .container { padding: 0; }
 .fact-list { list-style: none; display: flex; justify-content: center; padding: 0 0 32px; border-bottom: 1px solid var(--line); }
 .fact-list li { display: flex; align-items: center; gap: 8px; padding: 0 20px; white-space: nowrap; font: 600 19px/24px var(--font-b); color: var(--ink); }
 .fact-list li + li { border-left: 1px solid var(--line); }
 .fact-list svg { width: 20px; height: 20px; color: var(--gold); }
-.intro { margin-top: 32px; color: var(--muted); font-size: 21px; line-height: 34px; }
+.intro { margin: 0 auto 16px; max-width: 536px; color: var(--muted); font-size: 21px; line-height: 34px; text-wrap: pretty; }
 
 /* ---------- before / after ---------- */
 .ba-list { list-style: none; margin-top: 32px; display: grid; gap: 32px; }
@@ -179,7 +182,7 @@ section.ba { padding-bottom: 28px; }
 
 /* B · Ivory Gold extras */
 .hero h1 em, .script { font-style: italic; letter-spacing: -.01em; }
-.hero h1 em { font-size: calc(var(--h1-size) * .98); line-height: 1.05; }
+.hero h1 em { font-size: calc(var(--h1-size) * 1.02); line-height: 1.05; font-weight: 600; }
 .script { font-size: 34px; }
 .hero h1 { color: #2A2219; }
 .lc-page { background: linear-gradient(180deg,#FBF7F0,#F5EEE2); }

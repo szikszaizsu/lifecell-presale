@@ -16,8 +16,8 @@
   --ink-d: #1C1712;
   --muted-d: #4B4338;
   --serif: 'Cinzel', 'Trajan Pro', Georgia, serif;
-  --script: 'Fraunces', Georgia, serif;
-  --quote: 'Playfair Display', Georgia, serif;
+  --script: 'Cinzel', Georgia, serif;
+  --quote: 'Archivo', system-ui, sans-serif;
   --sans: 'Archivo', 'Inter', system-ui, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -226,3 +226,18 @@ p, li, td, th { text-wrap: pretty; }
 .ba .tiny { font-size: 15px; opacity: .5; margin-top: 18px; }
 .ba.pad { padding-bottom: 22px; }
 .ba .tiny { margin-top: 14px; }
+
+/* ===== Vincent 2026-11-25: max 2 typefaces (Cinzel + Archivo), few sizes, calm hierarchy =====
+   scale: 64 h1 · 34/27 h2 · 24 card titles · 21 body · 18 secondary · 15 labels */
+.hero h1 { font-size: 64px; margin-top: 8px; }
+.hero .sub { font: 400 22px/1.5 var(--sans); letter-spacing: 0; text-transform: none; color: var(--muted-l); margin: 22px auto 0; max-width: 420px; text-wrap: balance; }
+.hero .logo { margin-bottom: 34px; }
+.script, .story .script { font: 400 26px/1.3 var(--serif); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); }
+.story .script { margin-top: 24px; }
+.reviews blockquote { font: italic 400 27px/1.45 var(--sans); }
+.quote p { font: italic 400 21px/1.55 var(--sans); }
+.formula .item h3, .feat h3 { font-size: 24px; }
+.step h3, .pair h3, .perk span, .trust b, .reviews cite { font-size: 18px; }
+.formula .item p, .feat p, .step p, .pair p, .trust small, .disclaimer, .legal p { font-size: 18px; }
+.lead, .story p, .ticks li, .close, .center-strong { font-size: 21px; }
+.final p { font-size: 15px; }
