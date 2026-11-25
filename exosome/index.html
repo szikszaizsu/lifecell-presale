@@ -14,6 +14,8 @@
   body { background: var(--bg); color: var(--ink); font: 14px/20px 'Inter', system-ui, sans-serif; display: flex; flex-direction: column; overflow: hidden; }
   .bar { flex: none; display: flex; align-items: center; gap: 16px; padding: 8px 16px; background: var(--bar); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
   .brand { display: flex; align-items: center; gap: 8px; font-weight: 700; white-space: nowrap; }
+  a.brand { color: inherit; text-decoration: none; }
+  a.brand:hover span { color: var(--ink); }
   .brand i { width: 12px; height: 12px; background: var(--acc); display: inline-block; }
   .brand span { color: var(--muted); font-weight: 500; }
   .seg { display: inline-flex; background: #F3F4F6; border-radius: 10px; padding: 4px; gap: 4px; }
@@ -42,7 +44,7 @@
 </head>
 <body>
 <div class="bar">
-  <div class="brand"><i></i>LifeCell <span>· Exosomes pre-sale</span></div>
+  <a class="brand" href="../index.html" title="All LifeCell pre-sale pages"><i></i>LifeCell <span>· Exosomes pre-sale</span></a>
   <div class="seg" id="seg"></div>
   <div class="spacer"></div>
   <label class="tool hide-sm" id="syncWrap" title="Scroll all designs together"><input type="checkbox" id="sync" checked> Sync scroll</label>
