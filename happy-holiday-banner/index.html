@@ -115,6 +115,14 @@ h1 em { font-style: italic; }
 .hh--foil.m .hh-frame { top: 4px; border-top: .75px solid rgba(27,20,12,.35); border-radius: 2px; }
 .hh--foil .hh-d { color: rgba(27,20,12,.72); }
 
+/* Red Gold: Gold Foil layout on Christmas red, gold lettering and a gold inner frame */
+.hh--red { background: linear-gradient(90deg, #8E0C1F, #C8102E 50%, #8E0C1F); }
+.hh--red .hh-frame { top: 0; bottom: 4px; left: 8px; right: 8px; border: .75px solid rgba(233,199,123,.6); border-top: 0; border-radius: 0 0 15px 15px; }
+.hh--red.m .hh-frame { top: 4px; border-top: .75px solid rgba(233,199,123,.6); border-radius: 2px; }
+.hh--red .hh-serif, .hh--red .hh-s { background: var(--hh-gold); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hh--red .hh-p { color: #F1DDA9; }
+.hh--red .hh-d { color: rgba(241,221,169,.8); }
+
 /* 2 · Evergreen Luxe */
 .hh--luxe { background: #0B2A21; }
 .hh--luxe .hh-rule { left: 12px; right: 12px; top: 4px; height: 1px; background: var(--hh-gold); opacity: .7; }
@@ -178,12 +186,12 @@ h1 em { font-style: italic; }
 <div class="wrap">
   <header>
     <a class="eyebrow back" href="../index.html" title="All LifeCell pages">← LifeCell</a> <span class="eyebrow">· lifecellskin.com · Christmas 2026</span>
-    <h1>Christmas <em>Happy Holiday</em> banners</h1>
-    <p class="lede">This is how the Christmas banner looks on the site. On desktop it sits in the tab below the header; on mobile it runs full width at the top of the page. There are 11 styles and four campaign phases, the same set as the Figma file. Use the buttons to switch them, then copy the code of the chosen banner.</p>
+    <h1>Red Gold <em>Happy Holiday</em> banner</h1>
+    <p class="lede">This is how the Christmas banner looks on the site: gold lettering on Christmas red with a thin gold inner frame. On desktop it sits in the tab below the header; on mobile it runs full width at the top of the page. Use the buttons to switch the four campaign phases, then copy the code.</p>
   </header>
 
   <div style="display:grid;gap:10px">
-    <div class="switch" id="variant"><span>Style:</span></div>
+    <div class="switch" id="variant" hidden><span>Style:</span></div>
     <div class="switch" id="switch"><span>Phase:</span></div>
     <div class="switch"><button type="button" class="copy" id="copy">Copy banner code</button><span class="copy-msg" id="copy-msg" aria-live="polite"></span></div>
   </div>
@@ -265,6 +273,9 @@ const stack = ph => `<span class="hh-stack"><span class="hh-p">${ph.p}</span><sp
 const native = ph => `<span class="hh-line">${ph.l}</span><span class="hh-arrow">→</span><span class="hh-shop">Shop Now</span>`;
 const tape = 'HAPPY HOLIDAY ✦ DISCOUNT AT CHECKOUT ✦ '.repeat(6);
 const STYLES = [
+  { id: 'red', name: 'Red Gold', h: ph => `<span class="hh-deco hh-frame"></span><span class="hh-serif">Happy Holiday</span><span class="hh-s">✦</span>${stack(ph)}` },
+];
+const OTHER_STYLES = [
   { id: 'foil', name: 'Gold Foil', h: ph => `<span class="hh-deco hh-frame"></span><span class="hh-serif">Happy Holiday</span><span class="hh-s">✦</span>${stack(ph)}` },
   { id: 'luxe', name: 'Evergreen Luxe', h: ph => `<span class="hh-deco hh-rule"></span><span class="hh-deco hh-rule"></span><span class="hh-serif">Happy Holiday</span><span class="hh-s">✦</span>${stack(ph)}` },
   { id: 'green', name: 'Site Native Green', h: native },
@@ -290,7 +301,7 @@ function render() {
   document.querySelectorAll('.devices .bf-slot').forEach(s => s.innerHTML = banner(st, ph, s.dataset.fmt === 'm'));
   document.getElementById('copy-msg').textContent = '';
 }
-document.getElementById('strips').innerHTML = STYLES.map((st, i) => `<div class="eyebrow">${i + 1} · ${st.name} · all four phases, actual size (380 × 44)</div><div class="strip__row">${PHASES.map(ph => `<div class="bf-slot">${banner(st, ph, false)}</div>`).join('')}</div>`).join('');
+document.getElementById('strips').innerHTML = `<div class="eyebrow">Desktop · all four phases, actual size (380 × 44)</div><div class="strip__row">${PHASES.map(ph => `<div class="bf-slot">${banner(STYLES[0], ph, false)}</div>`).join('')}</div><div class="eyebrow">Mobile · all four phases, actual size (390 × 44)</div><div class="strip__row">${PHASES.map(ph => `<div class="bf-slot" style="width:390px;border-radius:0">${banner(STYLES[0], ph, true)}</div>`).join('')}</div>`;
 document.addEventListener('click', e => { if (e.target.closest('.hh')) e.preventDefault(); });
 document.getElementById('copy').addEventListener('click', () => {
   const st = STYLES.find(s => s.id === variant), ph = PHASES.find(p => p.id === cur);
