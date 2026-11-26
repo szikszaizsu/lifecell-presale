@@ -1,0 +1,147 @@
+/* LifeCell Overnight Hand Treatment · B · "Calm studio" (reference: soft therapist site — split hero, white sheet, colour band with overlapping photo, taupe card band), recoloured to the red tube */
+:root {
+  --bg: #F4EEE8; --white: #FFFFFF; --line: #E4D8D0;
+  --ink: #2A1E1C; --muted: #6F5F5A;
+  --red: #A8141C; --wine: #6B1A1F; --on-wine: #FAEFEA;
+  --taupe: #A48D86; --taupe-ink: #FFF8F4;
+  --serif: "Fraunces", Georgia, serif; --sans: "Inter", Arial, sans-serif;
+  --m: 32px; --r: 22px;
+  --sticky-bg: rgba(255,255,255,.97);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scrollbar-width: none; scroll-behavior: smooth; }
+html::-webkit-scrollbar { display: none; }
+body { background: var(--bg); color: var(--ink); font: 400 18px/1.55 var(--sans); text-wrap: pretty; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+.lc-page { width: 600px; margin: 0 auto; overflow: hidden; background: var(--bg); }
+.container { padding: 0 var(--m); }
+.center { text-align: center; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.08; text-wrap: balance; letter-spacing: -.015em; }
+em { font-style: italic; }
+.l1, .l2 { display: inline-block; }
+.kicker, .eyebrow { font: 600 15px/1.2 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--wine); margin-bottom: 16px; }
+.eyebrow.light { color: #F3C9C2; }
+.title-lg { font-size: 40px; margin-bottom: 20px; }
+.title-md { font-size: 34px; margin-bottom: 18px; }
+.title-lg em, .title-md em { color: var(--red); }
+.tiny { font-size: 15px; opacity: .5; margin-top: 12px; }
+
+/* header */
+.site-header { padding: 26px 0 22px; display: flex; justify-content: center; }
+.site-header .logo { width: 150px; }
+
+/* hero: text left, rounded photo card bleeding off the right edge */
+.hero-grid { display: grid; grid-template-columns: 1fr 262px; gap: 18px; align-items: center; padding-left: var(--m); }
+.hero h1 { font-size: 40px; line-height: 1.04; margin-bottom: 18px; }
+.hero h1 em { color: var(--red); }
+.hero .sub { font-size: 18px; color: var(--muted); }
+.hero-card { border-radius: 28px 0 0 28px; overflow: hidden; }
+.hero-card img { width: 100%; aspect-ratio: 700 / 1230; object-fit: cover; }
+.hero-bottom { padding: 26px var(--m) 0; }
+.fact-list { list-style: none; display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+.fact-list li { display: flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--line); border-radius: 99px; padding: 8px 14px; font-size: 16px; font-weight: 500; white-space: nowrap; }
+.fact-list svg { width: 18px; height: 18px; color: var(--red); flex: none; }
+
+/* CTA: one calm pill, full width */
+.cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; min-height: 80px; padding: 0 12px 0 32px; border-radius: 99px;
+  background: var(--wine); color: #fff; text-decoration: none; font: 600 20px/1 var(--sans); letter-spacing: .02em; box-shadow: 0 10px 24px rgba(107,26,31,.22); }
+.cta .arrow { width: 56px; height: 56px; border-radius: 50%; background: #fff; color: var(--wine); display: grid; place-items: center; flex: none; }
+.cta .arrow svg { width: 24px; height: 24px; }
+@media (prefers-reduced-motion: no-preference) {
+  .cta { animation: lc-cta-pulse 2.4s ease-in-out infinite; }
+  @keyframes lc-cta-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.02); box-shadow: 0 10px 30px rgba(107,26,31,.34); } }
+}
+.pill { display: inline-block; margin-top: 22px; background: var(--wine); color: #fff; text-decoration: none; border-radius: 99px; padding: 16px 28px; font: 600 15px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+
+/* intro: white sheet with rounded top, centered */
+.intro { padding-top: 48px; }
+.sheet { background: var(--white); border-radius: 30px 30px 0 0; padding: 44px var(--m) 40px; }
+.sheet p { font-size: 18px; color: var(--muted); max-width: 470px; margin: 0 auto; }
+.rule { display: block; width: 44px; height: 2px; background: var(--ink); opacity: .6; margin: 24px auto 0; }
+
+/* benefits: wine band, photo card overlapping from the left */
+.benefits { background: var(--white); padding-bottom: 8px; }
+.benefits-band { position: relative; margin-left: 80px; background: var(--wine); color: var(--on-wine); padding: 0 var(--m) 40px 34px; }
+.benefits-photo { position: relative; left: -92px; width: 440px; border-radius: 22px; overflow: hidden; box-shadow: 0 14px 30px rgba(0,0,0,.18); transform: translateY(-28px); }
+.benefits-photo img { width: 100%; aspect-ratio: 1100 / 614; object-fit: cover; }
+.benefits-text { margin-top: -6px; padding-left: 0; }
+.benefits-text .title-md { color: var(--on-wine); margin-bottom: 22px; }
+.benefits-text .title-md em { color: #F3C9C2; }
+.icon-list { list-style: none; display: grid; gap: 16px; }
+.icon-list li { display: grid; grid-template-columns: 50px 1fr; gap: 16px; align-items: center; font-size: 17px; line-height: 1.4; }
+.ic { width: 50px; height: 50px; border-radius: 50%; border: 1.5px solid rgba(250,239,234,.75); display: grid; place-items: center; }
+.ic svg { width: 24px; height: 24px; }
+
+/* mission: text left + rounded photo right (on white) */
+.mission { background: var(--white); padding: 52px 0 56px; }
+.mission-grid { display: grid; grid-template-columns: 1fr 210px; gap: 24px; align-items: center; }
+.mission-text p { font-size: 17px; color: var(--muted); }
+.mission-photo { border-radius: 22px; overflow: hidden; }
+.mission-photo img { width: 100%; aspect-ratio: 600 / 933; object-fit: cover; }
+
+/* before / after */
+.ba { padding: 60px 0 0; }
+.ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ba-pair figure { position: relative; border-radius: var(--r); overflow: hidden; }
+.ba-pair figcaption { position: absolute; left: 14px; top: 14px; background: #fff; color: var(--ink); border-radius: 99px; padding: 6px 14px; font: 600 15px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+
+/* signs: taupe band with white cards */
+.signs { margin-top: 60px; background: var(--taupe); padding: 48px var(--m) 52px; }
+.signs .title-md { color: var(--taupe-ink); margin-bottom: 26px; }
+.signs .title-md em { color: var(--taupe-ink); }
+.sign-cards { list-style: none; display: grid; gap: 14px; }
+.sign-cards li { background: var(--white); display: grid; grid-template-columns: 96px 1fr; gap: 20px; align-items: center; padding: 20px 22px; }
+.sign-cards .thumb { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; }
+.sign-cards .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.sign-cards h3 { font-size: 24px; margin-bottom: 6px; }
+.sign-cards p { font-size: 16px; color: var(--muted); line-height: 1.5; }
+
+/* ingredients */
+.ingr { padding: 60px 0 0; }
+.ingr-list { list-style: none; display: grid; gap: 26px; }
+.ingr-list li { display: grid; grid-template-columns: 110px 1fr; gap: 22px; align-items: start; }
+.ingr-list .thumb { width: 110px; height: 110px; border-radius: 50%; overflow: hidden; border: 3px solid var(--white); box-shadow: 0 0 0 1px var(--line); }
+.ingr-list .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.ingr-list b { font: 400 26px/1.15 var(--serif); display: block; margin-bottom: 6px; }
+.ingr-list p { font-size: 17px; color: var(--muted); }
+.also { margin-top: 26px; text-align: center; font-size: 18px; color: var(--muted); }
+.also b { color: var(--ink); font-weight: 600; }
+
+/* questions: open list on a white sheet */
+.qa { padding-top: 60px; }
+.qa .sheet { border-radius: 30px; margin: 0 var(--m); padding: 34px 30px 30px; }
+.qa .title-md { font-size: 40px; }
+.qa-list dt { font: 600 19px/1.35 var(--sans); padding-top: 18px; border-top: 1px solid var(--line); }
+.qa-list dd { font-size: 17px; color: var(--muted); padding: 8px 0 18px; }
+.qa-list dd:last-child { padding-bottom: 0; }
+.dots { list-style: none; display: grid; gap: 6px; }
+.dots li { position: relative; padding-left: 20px; }
+.dots li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+
+/* offer: wine band, product photo card + benefits */
+.offer { padding: 64px 0 56px; }
+.offer-band { background: var(--wine); color: var(--on-wine); display: grid; grid-template-columns: 190px 1fr; gap: 26px; align-items: center; padding: 30px var(--m); margin-bottom: 28px; }
+.offer-photo { border-radius: 20px; overflow: hidden; }
+.offer-photo img { width: 100%; aspect-ratio: 539 / 1258; }
+.offer-text .title-md { color: var(--on-wine); font-size: 30px; }
+.offer-text .title-md em { color: #F3C9C2; }
+.checks { list-style: none; display: grid; gap: 10px; }
+.checks li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; font-size: 17px; line-height: 1.4; }
+.checks svg { width: 22px; height: 22px; color: #F3C9C2; margin-top: 1px; }
+
+/* footer */
+.site-footer { background: var(--taupe); color: var(--taupe-ink); padding: 40px 0 104px; }
+.site-footer p { font-size: 15px; line-height: 1.5; opacity: .75; }
+.site-footer p + p { margin-top: 12px; }
+.legal { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 22px 0 14px; }
+.legal a { font-size: 15px; }
+.site-footer .copy { opacity: .65; }
+
+/* sticky CTA bar */
+.cta-footer { position: fixed; left: 50%; bottom: 0; transform: translateX(-50%); width: 600px; z-index: 20; display: flex; align-items: center; gap: 14px;
+  padding: 12px var(--m) calc(12px + env(safe-area-inset-bottom, 0px)); background: var(--sticky-bg); box-shadow: 0 -8px 24px rgba(0,0,0,.14); transition: transform .3s, opacity .3s; }
+.cta-footer img { width: 30px; height: 64px; object-fit: cover; border-radius: 6px; }
+.cta-footer .cta { min-height: 64px; font-size: 19px; animation: none; }
+.cta-footer .cta .arrow { width: 46px; height: 46px; }
+.lc-sticky-pending .cta-footer, .lc-sticky-ready .cta-footer:not(.is-on) { transform: translate(-50%, 110%); opacity: 0; visibility: hidden; pointer-events: none; }

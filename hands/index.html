@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>LifeCell · Overnight Hand Treatment pre-sale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #EEF0F4; --bar: #FFFFFF; --ink: #111827; --muted: #6B7280; --line: #E5E7EB; --acc: #C99F60; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body { background: var(--bg); color: var(--ink); font: 14px/20px 'Inter', system-ui, sans-serif; display: flex; flex-direction: column; overflow: hidden; }
+  .bar { flex: none; display: flex; align-items: center; gap: 16px; padding: 8px 16px; background: var(--bar); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 8px; font-weight: 700; white-space: nowrap; }
+  a.brand { color: inherit; text-decoration: none; }
+  a.brand:hover span { color: var(--ink); }
+  .brand-logo { height: 22px; width: auto; display: block; }
+  .brand i { width: 12px; height: 12px; background: var(--acc); display: inline-block; }
+  .brand span { color: var(--muted); font-weight: 500; }
+  .seg { display: inline-flex; background: #F3F4F6; border-radius: 10px; padding: 4px; gap: 4px; }
+  .seg button { border: 0; background: transparent; padding: 6px 12px; border-radius: 8px; font: inherit; font-weight: 600; color: var(--muted); cursor: pointer; white-space: nowrap; }
+  .seg button[aria-pressed="true"] { background: #FFFFFF; color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+  .spacer { flex: 1; }
+  .tool { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-weight: 600; text-decoration: none; cursor: pointer; background: none; border: 0; font: inherit; }
+  .tool:hover { color: var(--ink); }
+  .tool input { accent-color: var(--ink); }
+  .stage { flex: 1; min-height: 0; display: flex; justify-content: center; align-items: stretch; gap: 24px; padding: 16px; overflow-x: auto; }
+  .col { flex: none; display: flex; flex-direction: column; align-items: center; gap: 8px; min-height: 0; }
+  .col .label { font-weight: 700; color: var(--ink); white-space: nowrap; }
+  .col .label small { color: var(--muted); font-weight: 500; margin-left: 6px; }
+  .phone { flex: 1; min-height: 0; position: relative; overflow: hidden; border-radius: 28px; background: #000; box-shadow: 0 0 0 8px #111, 0 16px 48px rgba(17,24,39,.25); }
+  .phone iframe { position: absolute; left: 0; top: 0; width: 600px; border: 0; transform-origin: 0 0; background: #fff; }
+  .note { position: fixed; left: 50%; bottom: 12px; transform: translateX(-50%); background: rgba(17,24,39,.88); color: #fff; padding: 6px 12px; border-radius: 8px; font-size: 12px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .note.show { opacity: 1; }
+  @media (max-width: 700px) {
+    .bar { gap: 8px; padding: 8px; }
+    .brand span, .hide-sm { display: none; }
+    .stage { padding: 0; gap: 0; }
+    .phone { border-radius: 0; box-shadow: none; }
+    .col .label { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="brand" href="../index.html" title="All LifeCell pre-sale pages"><img class="brand-logo" src="assets/logo-dark.png" alt="LifeCell" width="1227" height="299"> <span>· Overnight Hand Treatment pre-sale</span></a>
+  <div class="seg" id="seg"></div>
+  <div class="spacer"></div>
+  <label class="tool hide-sm" id="syncWrap" title="Scroll all designs together"><input type="checkbox" id="sync" checked> Sync scroll</label>
+  <a class="tool" id="open" href="b/" target="_blank" rel="noopener">Open ↗</a>
+</div>
+<div class="stage" id="stage"></div>
+<div class="note" id="note"></div>
+<script>
+const DESIGNS = [
+  { id: 'b', name: 'B · Wine Studio', desc: 'men · red tube' },
+];
+const seg = document.getElementById('seg'), stage = document.getElementById('stage');
+const small = () => window.matchMedia('(max-width: 700px)').matches;
+const views = DESIGNS.map(d => ({ id: d.id, label: d.id.toUpperCase() }));
+views.forEach(v => { const b = document.createElement('button'); b.textContent = v.label; b.dataset.id = v.id; b.onclick = () => { location.hash = v.id; }; seg.appendChild(b); });
+
+let frames = [], syncing = false;
+// below 700 px there is room for one phone only: the side-by-side view is not offered there
+const available = () => views.filter(v => !(v.id === 'all' && small()));
+let lastSingle = 'b';
+function current() {
+  const h = location.hash.slice(1);
+  if (h === 'all' && small()) return lastSingle;
+  return available().some(v => v.id === h) ? h : 'b';
+}
+function render() {
+  const cur = current();
+  if (cur !== 'all') lastSingle = cur;
+  if (location.hash.slice(1) === 'all' && small()) history.replaceState(null, '', '#' + cur);
+  [...seg.children].forEach(b => { b.hidden = b.dataset.id === 'all' && small(); b.setAttribute('aria-pressed', b.dataset.id === cur); });
+  document.getElementById('syncWrap').style.display = cur === 'all' ? '' : 'none';
+  document.getElementById('open').href = cur === 'all' ? 'b/index.html' : cur + '/index.html';
+  const show = cur === 'all' ? DESIGNS : DESIGNS.filter(d => d.id === cur);
+  stage.innerHTML = ''; frames = [];
+  show.forEach(d => {
+    const col = document.createElement('div'); col.className = 'col';
+    col.innerHTML = `<div class="label">${d.name}<small>${d.desc}</small></div><div class="phone"><iframe src="${d.id}/index.html?t=${Date.now()}" title="${d.name}" loading="eager"></iframe></div>`;
+    stage.appendChild(col); frames.push(col.querySelector('iframe'));
+  });
+  fit();
+  frames.forEach(f => f.addEventListener('load', () => hook(f)));
+}
+function fit() {
+  const cols = [...stage.querySelectorAll('.col')];
+  const stageH = stage.clientHeight - (small() ? 0 : 16 + 28);
+  cols.forEach(col => {
+    const phone = col.querySelector('.phone'), f = phone.querySelector('iframe');
+    let w;
+    if (small()) w = stage.clientWidth;
+    else {
+      const byH = Math.round(stageH * 390 / 844);
+      const byW = Math.floor((stage.clientWidth - 32 - 24 * (cols.length - 1)) / cols.length);
+      w = Math.min(390, byH, byW);
+    }
+    const s = w / 600;
+    phone.style.width = w + 'px';
+    const h = small() ? stage.clientHeight : Math.min(stageH, Math.round(w * 844 / 390));
+    phone.style.height = h + 'px'; phone.style.flex = 'none';
+    f.style.transform = `scale(${s})`; f.style.height = Math.ceil(h / s) + 'px';
+  });
+}
+function hook(f) {
+  try {
+    const w = f.contentWindow;
+    w.addEventListener('scroll', () => {
+      if (syncing || current() !== 'all' || !document.getElementById('sync').checked) return;
+      const de = w.document.documentElement, r = w.scrollY / Math.max(1, de.scrollHeight - w.innerHeight);
+      syncing = true;
+      frames.forEach(o => { if (o !== f) { const ow = o.contentWindow, od = ow.document.documentElement; ow.scrollTo(0, r * (od.scrollHeight - ow.innerHeight)); } });
+      requestAnimationFrame(() => { syncing = false; });
+    }, { passive: true });
+  } catch (e) { /* cross-origin (file://): no sync */ }
+}
+function note(t) { const n = document.getElementById('note'); n.textContent = t; n.classList.add('show'); clearTimeout(note.t); note.t = setTimeout(() => n.classList.remove('show'), 1200); }
+document.addEventListener('keydown', e => {
+  if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+  const list = available(), ids = list.map(v => v.id); let i = ids.indexOf(current());
+  i = (i + (e.key === 'ArrowRight' ? 1 : -1) + ids.length) % ids.length;
+  location.hash = ids[i]; note(list[i].label);
+});
+window.addEventListener('hashchange', render);
+window.addEventListener('resize', fit);
+// crossing the 700 px breakpoint switches between one phone and the side-by-side view, so rebuild the frames
+window.matchMedia('(max-width: 700px)').addEventListener('change', render);
+render();
+</script>
+</body>
+</html>
